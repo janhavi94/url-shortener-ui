@@ -1,0 +1,28 @@
+<div class="container">
+    <h4 class="text-center">All Shortened Urls <button (click)="getUrlList()" type="button" class="btn btn-outline-dark">
+            Refresh <fa-icon [icon]="faRedo"></fa-icon>
+        </button></h4>
+
+
+
+</div>
+<div>
+    <table class="table">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">Sl. No.</th>
+                <th scope="col">Original Url</th>
+                <th scope="col">Shorten Url</th>
+                <th scope="col">Clicked</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let url of urls; let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td><a href="{{url.originalUrl}}">{{url.originalUrl}}</a></td>
+                <td><a href="{{url.shortUrl}}">{{url.shortUrl}}</a></td>
+                <td>{{url.usageCount}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
